@@ -4,10 +4,11 @@
         <h4>Raad een getal tussen de één en de honderd!</h4>
     </div>
 
-    <div class="gokmechanisme">
-        <input #gokgetal placeholder="Getal tussen 1 - 100" />
-        <button (click)="berekenGok(gokgetal.value)" [disabled]="isDisabled">GOK!</button>
-    </div>
+    <mat-form-field>
+        <mat-placeholder>Getal tussen 1 - 100</mat-placeholder>
+        <input matInput type="number" #gokgetal1>
+        <button mat-button matSuffix mat-stroked-button (click)="berekenGok(gokgetal1.value)" [disabled]="isDisabled" matTooltip="feedback">GOK!</button>
+    </mat-form-field>
 
     <div class='feedback-berichten'>
         <p>{{ feedback }}</p>
